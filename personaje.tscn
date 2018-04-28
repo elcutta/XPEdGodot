@@ -3,7 +3,7 @@
 [ext_resource path="res://personaje.gd" type="Script" id=1]
 [ext_resource path="res://personaje.png" type="Texture" id=2]
 
-[node name="personaje" type="Area2D"]
+[node name="personaje" type="Area2D" index="0"]
 
 position = Vector2( 0, -75 )
 input_pickable = true
@@ -26,7 +26,7 @@ position = Vector2( 0, -0.5 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+[node name="colisionPersonaje" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
 polygon = PoolVector2Array( -7.64496, 16.6567, 7.07363, 16.6567, 7.07363, 31.5832, -7.64496, 31.5832 )

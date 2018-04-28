@@ -19,7 +19,7 @@ _sections_unfolded = [ "Transform" ]
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+[node name="colisionObstaculo" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
 polygon = PoolVector2Array( -120, 120, 120, 120, 120, 280, -120, 280 )
