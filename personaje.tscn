@@ -3,22 +3,15 @@
 [ext_resource path="res://personaje.gd" type="Script" id=1]
 [ext_resource path="res://personaje.png" type="Texture" id=2]
 
-[node name="personaje" type="Area2D" index="0"]
+[node name="personaje" type="KinematicBody2D" index="0"]
 
 position = Vector2( 0, -75 )
 input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_horizontal_guides_": [ -100.0, 30.0 ],
-"_edit_vertical_guides_": [ -30.0, 30.0 ]
-}
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -30,9 +23,5 @@ texture = ExtResource( 2 )
 
 build_mode = 0
 polygon = PoolVector2Array( -7.64496, 16.6567, 7.07363, 16.6567, 7.07363, 31.5832, -7.64496, 31.5832 )
-
-[connection signal="area_entered" from="." to="." method="_on_personaje_area_entered"]
-
-[connection signal="area_exited" from="." to="." method="_on_personaje_area_exited"]
 
 
