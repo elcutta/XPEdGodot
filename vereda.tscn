@@ -1,18 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://vereda.png" type="Texture" id=1]
 [ext_resource path="res://arbol.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ancianita.tscn" type="PackedScene" id=3]
 
-[node name="vereda" type="Area2D"]
+[sub_resource type="RectangleShape2D" id=1]
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
+custom_solver_bias = 0.0
+extents = Vector2( 10, 1247.14 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 494.92, 10 )
+
+[node name="vereda" type="Node2D" index="0"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -41,6 +43,8 @@ position = Vector2( 250, -690 )
 position = Vector2( 730, -1030 )
 
 [node name="ancianitas" type="Node2D" parent="obstaculos" index="1"]
+
+editor/display_folded = true
 
 [node name="Area2D" parent="obstaculos/ancianitas" index="0" instance=ExtResource( 3 )]
 
@@ -77,5 +81,46 @@ position = Vector2( 170, -1140 )
 [node name="Area2D9" parent="obstaculos/ancianitas" index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 510, -1280 )
+
+[node name="bordes" type="Node2D" parent="obstaculos" index="2"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="obstaculos/bordes" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaculos/bordes/KinematicBody2D" index="0"]
+
+position = Vector2( 17.124, -424.675 )
+shape = SubResource( 1 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="obstaculos/bordes" index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaculos/bordes/KinematicBody2D2" index="0"]
+
+position = Vector2( 1010.31, -414.4 )
+shape = SubResource( 1 )
+
+[node name="KinematicBody2D3" type="KinematicBody2D" parent="obstaculos/bordes" index="2"]
+
+position = Vector2( 513.719, -1633.63 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaculos/bordes/KinematicBody2D3" index="0"]
+
+shape = SubResource( 2 )
 
 

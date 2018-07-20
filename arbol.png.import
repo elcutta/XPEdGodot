@@ -7,10 +7,7 @@ path="res://.import/arbol.png-302907e894e1f06964e932ecfcd2d3c9.stex"
 [deps]
 
 source_file="res://arbol.png"
-source_md5="1d8c1e98994e93192cde9f01657bf508"
-
 dest_files=[ "res://.import/arbol.png-302907e894e1f06964e932ecfcd2d3c9.stex" ]
-dest_md5="8b4644d4a53fe181cf2c8175e161014d"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/vereda.png-3c83039f91d34e98cb19c11b06a63956.stex"
 [deps]
 
 source_file="res://vereda.png"
-source_md5="6def28bda370433b1623e2d75d1d945e"
-
 dest_files=[ "res://.import/vereda.png-3c83039f91d34e98cb19c11b06a63956.stex" ]
-dest_md5="2ad3142c752d335f01b5cb2c3bcde33d"
 
 [params]
 

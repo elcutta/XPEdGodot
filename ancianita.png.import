@@ -7,10 +7,7 @@ path="res://.import/ancianita.png-9509e59f151cf14d06b158b9cacc2aa2.stex"
 [deps]
 
 source_file="res://ancianita.png"
-source_md5="59f0a970fcf4c1726c9f58d4e55bf7c4"
-
 dest_files=[ "res://.import/ancianita.png-9509e59f151cf14d06b158b9cacc2aa2.stex" ]
-dest_md5="a0575b8cce4d156e1c7d969b914c0dba"
 
 [params]
 
