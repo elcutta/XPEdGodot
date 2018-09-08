@@ -4,17 +4,22 @@ extends KinematicBody2D
 # var a = 2
 # var b = "textvar"
 var VEL_CONSTANTE = 50
+var dir = Vector2()
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	pass
+	dir.x = randi() % 3 - 1
+	dir.y = randi() % 3 - 1
+	
+	dir = dir.normalized()
 
 func _physics_process(delta):
-	var movimiento = Vector2()
-	movimiento.x = randi() % 3 - 1
-	movimiento.y = randi() % 3 - 1
+	var movimiento = dir
+	var variacion = Vector2()
+	variacion.x = randi() % 3 - 1
+	variacion.y = randi() % 3 - 1
 	
-	movimiento = movimiento.normalized() * VEL_CONSTANTE
+	movimiento = movimiento * VEL_CONSTANTE + variacion * 10
 	
 	move_and_slide(movimiento)
