@@ -12,13 +12,18 @@ func _ready():
 
 func _physics_process(delta):
 	var movimiento = Vector2()
+	var modifiVel = 1
 	movimiento.y = -1
 	
 	if (Input.is_action_pressed("ui_left")):
 		movimiento.x = -1
 	if (Input.is_action_pressed("ui_right")):
 		movimiento.x = 1
+	if (Input.is_action_pressed("ui_up")):
+		modifiVel = 2
+	if (Input.is_action_pressed("ui_down")):
+		modifiVel = 0.5
 	
-	movimiento = movimiento.normalized() * VEL_CONSTANTE
+	movimiento = movimiento.normalized() * VEL_CONSTANTE * modifiVel
 	
 	move_and_slide(movimiento)
