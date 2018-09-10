@@ -4,6 +4,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "textvar"
 var VEL_CONSTANTE = 100
+var stress_modif = 1
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -21,9 +22,17 @@ func _physics_process(delta):
 		movimiento.x = 1
 	if (Input.is_action_pressed("ui_up")):
 		modifiVel = 2
-	if (Input.is_action_pressed("ui_down")):
+		stress_modif = 3
+	elif (Input.is_action_pressed("ui_down")):
 		modifiVel = 0.5
+		stress_modif = 2
+	else:
+		stress_modif = 1
 	
 	movimiento = movimiento.normalized() * VEL_CONSTANTE * modifiVel
 	
 	move_and_slide(movimiento)
+	
+	# Se estresa más al chocar
+	if (get_slide_count() > 0):
+		stress_modif = 10

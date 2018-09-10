@@ -19,4 +19,4 @@ func _process(delta):
 		$OSD/LabelGameOver.visible = true
 		pass#a a mejor vida
 	else:
-		stressPersonaje = stressPersonaje + delta
+		stressPersonaje = stressPersonaje + delta * $jugador.stress_modif
